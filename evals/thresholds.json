@@ -1,0 +1,1 @@
+{"recall_at_k": 0.93, "mrr": 0.85, "answerable_correct": 0.9, "refusal_correct": 0.8, "grounded_rate": 1.0}

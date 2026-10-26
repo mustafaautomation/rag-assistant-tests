@@ -1,0 +1,22 @@
+{"id": "a01", "question": "How much does a single ride cost for the first 30 minutes?", "answerable": true, "must_include": ["2.50"]}
+{"id": "a02", "question": "What does the day pass cost?", "answerable": true, "must_include": ["9.00"]}
+{"id": "a03", "question": "How much is the annual membership for students?", "answerable": true, "must_include": ["49.00"]}
+{"id": "a04", "question": "What is the e-bike unlock fee and per-minute price?", "answerable": true, "must_include": ["1.00", "0.15"]}
+{"id": "a05", "question": "How many days before renewal is the reminder email sent?", "answerable": true, "must_include": ["14 days"]}
+{"id": "a06", "question": "How do I cancel automatic renewal of my membership?", "answerable": true, "must_include": ["Auto-renew"]}
+{"id": "a07", "question": "What fee is charged for a lost bike left outside a dock?", "answerable": true, "must_include": ["150.00"]}
+{"id": "a08", "question": "Up to what speed does the e-bike assist work?", "answerable": true, "must_include": ["25 km/h"]}
+{"id": "a09", "question": "What is the minimum battery level to start an e-bike ride?", "answerable": true, "must_include": ["20 percent"]}
+{"id": "a10", "question": "How long do I have to dispute a ride charge?", "answerable": true, "must_include": ["30 days"]}
+{"id": "a11", "question": "How old must riders be?", "answerable": true, "must_include": ["16"]}
+{"id": "a12", "question": "How many bikes can one account unlock for a group ride?", "answerable": true, "must_include": ["four bikes"]}
+{"id": "a13", "question": "How far in advance must adaptive tricycles be booked?", "answerable": true, "must_include": ["2 hours"]}
+{"id": "a14", "question": "How long is ride history kept before deletion?", "answerable": true, "must_include": ["24 months"]}
+{"id": "a15", "question": "How long is the one-time sign-in code valid?", "answerable": true, "must_include": ["10 minutes"]}
+{"id": "a16", "question": "At what wind speed are all stations closed?", "answerable": true, "must_include": ["70 km/h"]}
+{"id": "u01", "question": "Can I rent an electric scooter from Harbourline?", "answerable": false}
+{"id": "u02", "question": "Does Harbourline operate in Paris?", "answerable": false}
+{"id": "u03", "question": "What is the capital of Australia?", "answerable": false}
+{"id": "u04", "question": "Who founded the company and when?", "answerable": false}
+{"id": "u05", "question": "What is the share price today?", "answerable": false}
+{"id": "u06", "question": "Recommend a good pizza place near Central Quay.", "answerable": false}

@@ -1,0 +1,42 @@
+{"id": "r01", "question": "How much does one ride cost?", "relevant": ["pricing"]}
+{"id": "r02", "question": "What does a day pass cost and how long can each ride be?", "relevant": ["pricing"]}
+{"id": "r03", "question": "Is there a cheaper membership for students?", "relevant": ["pricing"]}
+{"id": "r04", "question": "What extra fee do I pay for an electric bike?", "relevant": ["pricing", "ebikes"]}
+{"id": "r05", "question": "How do I stop my membership renewing automatically?", "relevant": ["membership"]}
+{"id": "r06", "question": "Can I get my money back after buying an annual membership?", "relevant": ["membership", "refunds"]}
+{"id": "r07", "question": "Can my partner use my membership?", "relevant": ["membership"]}
+{"id": "r08", "question": "How do I unlock a bike with the app?", "relevant": ["unlocking"]}
+{"id": "r09", "question": "How do I know my ride has ended when I dock the bike?", "relevant": ["unlocking"]}
+{"id": "r10", "question": "The station is full, where do I return my bike?", "relevant": ["unlocking"]}
+{"id": "r11", "question": "What happens if I leave a bike outside a dock overnight?", "relevant": ["unlocking"]}
+{"id": "r12", "question": "How fast does the e-bike assist go?", "relevant": ["ebikes"]}
+{"id": "r13", "question": "How far can I ride on a full e-bike battery?", "relevant": ["ebikes"]}
+{"id": "r14", "question": "Can I charge the e-bike battery at a dock?", "relevant": ["ebikes"]}
+{"id": "r15", "question": "The brake on my bike is broken, what should I do?", "relevant": ["damage"]}
+{"id": "r16", "question": "How do I mark a bike as out of service at the dock?", "relevant": ["damage"]}
+{"id": "r17", "question": "My bike broke in the middle of a ride. Will I still be charged?", "relevant": ["damage", "refunds"]}
+{"id": "r18", "question": "Will I pay a damage fee for normal wear?", "relevant": ["damage"]}
+{"id": "r19", "question": "I was charged wrongly for a ride, how do I dispute it?", "relevant": ["refunds"]}
+{"id": "r20", "question": "How long does a card refund take to show up?", "relevant": ["refunds"]}
+{"id": "r21", "question": "Do goodwill ride credits expire?", "relevant": ["refunds"]}
+{"id": "r22", "question": "How old do you have to be to ride?", "relevant": ["safety"]}
+{"id": "r23", "question": "Do the bikes come with helmets?", "relevant": ["safety"]}
+{"id": "r24", "question": "Can I carry my child on the bike?", "relevant": ["safety"]}
+{"id": "r25", "question": "Am I allowed to ride on the footpath?", "relevant": ["safety"]}
+{"id": "r26", "question": "Can I unlock bikes for my friends on one account?", "relevant": ["group-rides"]}
+{"id": "r27", "question": "Who pays for the other bikes in a group ride?", "relevant": ["group-rides"]}
+{"id": "r28", "question": "Can a group ride use e-bikes?", "relevant": ["group-rides"]}
+{"id": "r29", "question": "Does the app work with a screen reader?", "relevant": ["accessibility"]}
+{"id": "r30", "question": "Where can I get an adaptive tricycle and how early must I book?", "relevant": ["accessibility"]}
+{"id": "r31", "question": "Does a carer have to pay?", "relevant": ["accessibility"]}
+{"id": "r32", "question": "Do you track my GPS location?", "relevant": ["privacy"]}
+{"id": "r33", "question": "How long is my ride history kept?", "relevant": ["privacy"]}
+{"id": "r34", "question": "How can I download a copy of my data?", "relevant": ["privacy"]}
+{"id": "r35", "question": "How do I delete my account?", "relevant": ["privacy"]}
+{"id": "r36", "question": "I never got my sign-in code, what now?", "relevant": ["account"]}
+{"id": "r37", "question": "How many devices can I stay signed in on?", "relevant": ["account"]}
+{"id": "r38", "question": "How do I change the email address on my account?", "relevant": ["account"]}
+{"id": "r39", "question": "Does the service run when it snows?", "relevant": ["winter"]}
+{"id": "r40", "question": "Are stations closed in strong wind?", "relevant": ["winter"]}
+{"id": "r41", "question": "Is my membership extended when stations close for weather?", "relevant": ["winter"]}
+{"id": "r42", "question": "Do I need a password to log in?", "relevant": ["account"]}

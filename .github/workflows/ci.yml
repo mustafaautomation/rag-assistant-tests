@@ -1,0 +1,87 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# No job sets RAG_LLM_* variables: CI never calls a model provider.
+
+jobs:
+  checks:
+    name: Lint, types, tests (offline)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v10.3.2
+      - run: uv sync --locked
+      - run: uv run ruff check .
+      - run: uv run ruff format --check .
+      - run: uv run mypy
+      - name: pytest with coverage gate (90%)
+        run: uv run pytest --cov --cov-report=term --cov-report=xml
+
+  evals:
+    name: Retrieval and answer gates
+    needs: checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v10.3.2
+      - run: uv sync --locked
+      - run: mkdir -p reports
+      - name: recall@3 and MRR on the hand-labelled retrieval set
+        run: uv run rag --k 3 eval-retrieval --json reports/retrieval.json
+      - name: Answer accuracy, refusals and grounding
+        run: uv run rag eval-answers --json reports/answers.json
+      - name: The same gate must fail at k=1 (proves it can fail)
+        run: |
+          if uv run rag --k 1 eval-retrieval; then
+            echo "expected the retrieval gate to fail at k=1"; exit 1
+          fi
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: eval-reports
+          path: reports/
+
+  pgvector:
+    name: pgvector store matches the in-memory store
+    needs: checks
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: pgvector/pgvector:0.8.7-pg17
+        env:
+          POSTGRES_PASSWORD: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres" --health-interval 2s --health-timeout 5s --health-retries 30
+    env:
+      PGVECTOR_URL: postgresql://postgres:postgres@127.0.0.1:5432/postgres
+    steps:
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v10.3.2
+      - run: uv sync --locked --extra pgvector
+      - name: pgvector tests (fail if skipped)
+        run: |
+          uv run pytest -m pgvector -v -rs | tee pg.txt
+          grep -q "1 passed" pg.txt
+
+  secrets:
+    name: Secret scan (gitleaks)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - name: Install gitleaks 8.30.1
+        run: |
+          curl -sSfL https://github.com/gitleaks/gitleaks/releases/download/v8.30.1/gitleaks_8.30.1_linux_x64.tar.gz \
+            | tar -xz gitleaks
+      - run: ./gitleaks git --redact --verbose --exit-code 1 .
