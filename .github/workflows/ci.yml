@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-      - uses: astral-sh/setup-uv@v10.3.2
+      - uses: astral-sh/setup-uv@v10.3.3
       # the pgvector extra is installed so mypy can type-check pgstore.py
       - run: uv sync --locked --extra pgvector
       - run: uv run ruff check .
@@ -32,7 +32,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-      - uses: astral-sh/setup-uv@v10.3.2
+      - uses: astral-sh/setup-uv@v10.3.3
       - run: uv sync --locked
       - run: mkdir -p reports
       - name: recall@3 and MRR on the hand-labelled retrieval set
@@ -67,7 +67,7 @@ jobs:
       PGVECTOR_URL: postgresql://postgres:postgres@127.0.0.1:5432/postgres
     steps:
       - uses: actions/checkout@v7
-      - uses: astral-sh/setup-uv@v10.3.2
+      - uses: astral-sh/setup-uv@v10.3.3
       - run: uv sync --locked --extra pgvector
       - name: pgvector tests (fail if skipped)
         run: |
